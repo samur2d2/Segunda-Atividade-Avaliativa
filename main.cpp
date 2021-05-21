@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <stdlib.h>
 #include <string>
+#include <conio.h>
 using namespace std;
 
 void FirstWindow(){
@@ -31,32 +32,27 @@ void FirstWindow(){
 
 //-----------------------------------------------------------------------------------------------------------------
 
-void Codeblocks(){
-    system("cls");
+void SecondWindow(){
+    for (int i=0; i<30; i++){cout<<endl;}
+    char option = ' ';
     for (int i=0; i<3; i++){cout << endl;}
-    cout << "\t +----------------------------------------------+" << endl;
-    cout << "\t |                                              |" << endl;
-    cout << "\t |            IMPORTANT INFORMATIONS            |" << endl;
-    cout << "\t |                                              |" << endl;
-    cout << "\t +----------------------------------------------+" << endl;
-    cout << "\t |                                              |" << endl;
-    cout << "\t |   - Enter C to encode the string             |" << endl;
-    cout << "\t |   - Enter D to decode the string             |" << endl;
-    cout << "\t |   - Enter the string to be processed         |" << endl;
-    cout << "\t |   - The string must be less than 1K char     |" << endl;
-    cout << "\t |   - Any char after 1K will be disregarded    |" << endl;
-    cout << "\t |                                              |" << endl;
-    cout << "\t +----------------------------------------------+" << endl;
-    for (int i=0; i<1; i++){cout << endl;}
-    cout << "\t" << system("pause");
-
+    cout << "\t +-----------------------------------------+" << endl;
+    cout << "\t |                                         |" << endl;
+    cout << "\t |     THE FIRST NUMBER MUST INDICATE      |" << endl;
+    cout << "\t |    THE AMOUNT OF NUMBERS TO BE ADDED    |" << endl;
+    cout << "\t |                                         |" << endl;
+    cout << "\t +-----------------------------------------+" << endl;
+    cout << "\t |              Press any key to continue  |" << endl;
+    cout << "\t +-----------------------------------------+" << endl;
+    for (int i=0; i<3; i++){cout << endl;}
+    getch();
 }
 
 //-----------------------------------------------------------------------------------------------------------------
 
 int main(){
 
-    FirstWindow();
+    //FirstWindow();
 
     SecondWindow();
 
