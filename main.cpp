@@ -6,7 +6,7 @@
 using namespace std;
 
 void FirstWindow(){
-    for (int i=0; i<30; i++){cout<<endl;}
+    system("cls");
     char option = ' ';
     for (int i=0; i<3; i++){cout << endl;}
     cout << "\t +-----------------------------------------+" << endl;
@@ -33,8 +33,7 @@ void FirstWindow(){
 //-----------------------------------------------------------------------------------------------------------------
 
 void SecondWindow(){
-    for (int i=0; i<30; i++){cout<<endl;}
-    char option = ' ';
+    system("cls");
     for (int i=0; i<3; i++){cout << endl;}
     cout << "\t +-----------------------------------------+" << endl;
     cout << "\t |                                         |" << endl;
@@ -49,11 +48,33 @@ void SecondWindow(){
 }
 
 //-----------------------------------------------------------------------------------------------------------------
+void Exemple(){
+    system("cls");
+    for (int i=0; i<3; i++){cout << endl;}
+
+    int positions=0;
+    cout << "\t Enter the number of positions: "; cin >> positions;
+
+    int vet[positions];
+    for (int i=0; i<positions; i++){
+        cout << "\t Enter the " << (i+1);
+            if (i == 0){cout << "st";}
+            else if (i == 1){cout << "nd";}
+            else if (i == 2){cout << "rd";}
+            else{cout << "th";}
+        cout << " number: "; cin >> vet[i];
+        }
+    }
+
+
+//-----------------------------------------------------------------------------------------------------------------
 
 int main(){
 
     //FirstWindow();
 
-    SecondWindow();
+    //SecondWindow();
+
+    Exemple();
 
 }
