@@ -1,3 +1,4 @@
+//NEM TENTA RODAR NO REPLIT PQ N VAI. ABRE O CODEBLOCKS AI.
 #include <iostream>
 #include <cstdlib>
 #include <stdlib.h>
