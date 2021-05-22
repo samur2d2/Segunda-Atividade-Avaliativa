@@ -1,4 +1,5 @@
-//NEM TENTA RODAR NO REPLIT PQ N VAI. ABRE O CODEBLOCKS AI.
+//NÃO VAI RODAR NO REPLIT, USA O CODEBLOXKS.
+//DESSA VEZ VOU COMENTAR EM PORTUGUES MESMO, MÓ PREGUIÇA;
 #include <iostream>
 #include <cstdlib>
 #include <stdlib.h>
@@ -8,15 +9,20 @@
 using namespace std;
 
 //-----------------------------------------------------------------------------------------------------------------
+//ESSA FUNÇÃO SERVE PRA PULAR ALGUMAS LINHAS;
 void Jump(){for (int i=0; i<3; i++){cout << endl;}};
 //-----------------------------------------------------------------------------------------------------------------
+//ESSA FUNÇÃO IMPRIME OS +---+ DA PARTE "GRÁFICA";
 void HBar(int cont=0){cout << "+"; for(int k=0; k<cont; k++){cout << "-";} cout << "+" << endl;}
 //-----------------------------------------------------------------------------------------------------------------
+//ESSA FUNÇÃO IMPRIME OS |   | DA PARTE "GRÁFICA";
 void HSpace(int cont=0){cout << "|"; for(int k=0; k<cont; k++){cout << " ";} cout << "|" << endl;}
 //-----------------------------------------------------------------------------------------------------------------
 void FirstWindow(){
     system("cls");
     char option = ' ';
+
+    //INICIA A FUNÇÃO APRESENTANDO UM TEXTO SOBRE O FUNCIONAMENTO.
     Jump();
     cout << "\t "; HBar(41);cout << "\t "; HSpace(41);
     cout << "\t |    TO EXPERIENCE BETTER PERFORMANCE     |" << endl;
@@ -30,30 +36,17 @@ void FirstWindow(){
     Jump();
     cout << "\t Please enter Y to continue or N to exit: ";
     cin >> option;
-    if (toupper(option) == 'Y'){
-    }else{exit(EXIT_FAILURE);}
-}
-//-----------------------------------------------------------------------------------------------------------------
-void SecondWindow(){
-    system("cls");
-    Jump();
-    cout << "\t "; HBar(41); cout << "\t "; HSpace(41);
-    cout << "\t |     THE FIRST NUMBER MUST INDICATE      |" << endl;
-    cout << "\t |    THE AMOUNT OF NUMBERS TO BE ADDED    |" << endl;
-    cout << "\t "; HSpace(41); cout << "\t "; HBar(41);
-    cout << "\t |              Press any key to continue  |" << endl;
-    cout << "\t "; HBar(41);
-    Jump();
-    getch();
+    if (toupper(option) == 'Y'){ //CASO ESCOLHA Y, O PROGRAMA SEGUE;
+    }else{exit(EXIT_FAILURE);} //QUALQUER OUTRO CARACTER FECHARA O PROGRAMA;
 }
 //-----------------------------------------------------------------------------------------------------------------
 void Printing(int amount=0, int v[]=0, int cont=0){
     system("cls");
     Jump();
-    cout << "\t "; HBar(41);cout << "\t "; HSpace(41);
+    //IMPRIME AS INFORMAÇÕES REFERENTES AO PREENCHUMENTO DO VETOR;
+    cout << "\t "; HBar(41); cout << "\t "; HSpace(41);
     cout << "\t |           FILLING INFORMATION           |" << endl;
-    cout << "\t "; HSpace(41);
-    cout << "\t "; HBar(41);
+    cout << "\t "; HSpace(41); cout << "\t "; HBar(41);
     cout << "\t |           TOTAL SPACES: " << setw(6) << amount << "          |" << endl;
     cout << "\t "; HBar(41);
     cout << "\t |        OCCUPIED SPACES: " << setw(6) << (cont) << "          |" << endl;
@@ -61,20 +54,21 @@ void Printing(int amount=0, int v[]=0, int cont=0){
     cout << "\t |            FREE SPACES: " << setw(6) << (amount-cont) << "          |" << endl;
     cout << "\t "; HBar(41);
 
+    //MOSTRA O VETOR SENDO PREENCHIDO E QUAIS POSIÇÕES AINDA ESTÃO VAZIAS;
     cout << "\n\n\t "; HBar(71);
     cout << "\t |                          VECTOR INFoRMATIONS                           |" << endl;
     cout << "\t "; HBar(71);
-    for(int i=0; i<amount; i++){
-        if (i % 15 == 0){
-            if(i == 0){cout<<"\t ";}
-            else{cout << "\n\t "; for(int k=0;k<71;k++){cout<<" ";} cout<<endl; cout << "\t ";}
+    for(int i=0; i<amount; i++){ //UM FOR PARA IMPRIMIR O VETOR. AMOUNT É A QUANTIDADE DE CASAS DELE;
+        if (i % 15 == 0){ //SE FOR O 15º ELEMENTO VAI PULAR DE LINHA;
+            if(i == 0){cout<<"\t ";} //SE FOR O PRIMEIRO, NÃO PULA A LINHA;
+            else{cout << "\n\t "; for(int k=0;k<71;k++){cout<<" ";} cout<<endl; cout << "\t ";} //SE NAO FOR O PRIMEIRO ENTAO PULA A LINHA
         }
-        if (i<cont){
+        if (i<cont){ //CONT É A REFERENCIA PRA SABER ATÉ ONDE JA FOI PREENCHIDO;
             if (i % 15 == 0){cout << " [" << v[i] << "] ";}
             else if (i % 15 == 14){cout << "  ";}
             else{cout << "[" << v[i] << "] ";}
         }
-        else{
+        else{ //ESSA PARTE IMPRIME OS ESPAÇOS VAZIOS DO VETOR;
             if (i % 15 == 0){cout << " [ ] ";}
             else if (i % 15 == 14){cout << "[ ] ";}
             else{cout << "[ ] ";}
@@ -87,17 +81,15 @@ int FindMax(int vet[]=0, int amount=0){
     int actualMax=0;
     bool firstTime=true;
 
+    //ESSE FOR VAI ANALISAR TODOS OS ELEMENTOS DO VETOR;
     for (int i=0; i<amount; i++){
-        if (firstTime == true){
+        if (firstTime == true){ //SE FOR O PRIMEIRO ELEMENTO, ENTAO O VALOR MAXIMO SERA ELE;
             actualMax = vet[i];
             firstTime = false;
-
         }
-        if (actualMax < vet[i]){
-            actualMax = vet[i];
-        }
+        if (actualMax < vet[i]){actualMax = vet[i];} //SE O VALOR MAX FOR MENOR DO QUE O VALOR DO VETOR ENTAO ATUALIZA O VALOR MAX;
     }
-
+    //IMPRIME O VETOR BONITINHO;
     system("cls");
     cout << "\n\n\t "; HBar(61);
     cout << "\t |                     VECTOR INFRMATIONS                      |" << endl;
@@ -115,7 +107,7 @@ int FindMax(int vet[]=0, int amount=0){
     return actualMax;
 }
 //-----------------------------------------------------------------------------------------------------------------
-int FindMin(int vet[]=0, int amount=0){
+int FindMin(int vet[]=0, int amount=0){//FUNCIONA IGUAL O MAXIMO, POREM SEM A PARTE DE IMPRIMIR;
     int actualMin=0;
     bool firstTime=true;
 
@@ -124,14 +116,12 @@ int FindMin(int vet[]=0, int amount=0){
             actualMin = vet[i];
             firstTime = false;
         }
-        if (actualMin > vet[i]){
-            actualMin = vet[i];
-        }
+        if (actualMin > vet[i]){ actualMin = vet[i];}
     }
     return actualMin;
 }
 //-----------------------------------------------------------------------------------------------------------------
-void FuncExigida(int* pVet, int amount, int* pMin, int* pMax){
+void FuncExigida(int* pVet, int amount, int* pMin, int* pMax){ //FUNÇÃO APARENTEMENTE INUTIL EXIGIDA;
     cout << "\t |      First position array address: " << setw(10) << pVet << "               |" << endl;
     cout << "\t "; HBar(61);
     cout << "\t |   Amount of elements in the array: " << setw(10) << amount << "               |" << endl;
@@ -147,17 +137,17 @@ void FuncExigida(int* pVet, int amount, int* pMin, int* pMax){
 }
 //-----------------------------------------------------------------------------------------------------------------
 void CollectingData(){
-    //system("cls");
-    for (int i=0; i<3; i++){cout << endl;}
+    system("cls");
+    Jump();
 
     int positions=0;
-    cout << "\t Enter the number of positions: "; cin >> positions;
+    cout << "\t Enter the number of positions: "; cin >> positions; //TAMANHO DO VETOR;
 
     int cont=0;
-    int vet[positions];
+    int vet[positions]; //DEFINE O VETOR COM O TAMANHO DESEJADO;
 
     for (int i=0; i<positions; i++){
-        Printing(positions, vet, cont);
+        Printing(positions, vet, cont); //SO PRINTA O VETOR SENDO PREENCHIDO;
         cout << "\t Enter the " << (i+1);
             if (i == 0){cout << "st";}
             else if (i == 1){cout << "nd";}
@@ -166,12 +156,10 @@ void CollectingData(){
         cout << " number: "; cin >> vet[i];
         cont++;
     }
-    int minValue = FindMin(vet, positions);
-    int maxValue = FindMax(vet, positions);
-
-    int* pVet = vet;
-    FuncExigida(pVet, positions, &minValue, &maxValue);
-
+    int minValue = FindMin(vet, positions); //ENCONTRA O MENOR VALOR;
+    int maxValue = FindMax(vet, positions); //ENCONTRA O MAIOR VALOR;
+    int* pVet = vet; //DEFINE UM PONTEIRO APONTANDO PARA O VETOR;
+    FuncExigida(pVet, positions, &minValue, &maxValue); //IMPRIME ALGUMAS COISAS;
 }
 //-----------------------------------------------------------------------------------------------------------------
 
@@ -179,8 +167,5 @@ int main(){
 
     FirstWindow();
 
-    SecondWindow();
-
     CollectingData();
-
 }
