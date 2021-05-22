@@ -122,6 +122,10 @@ int FindMin(int vet[]=0, int amount=0){//FUNCIONA IGUAL O MAXIMO, POREM SEM A PA
 }
 //-----------------------------------------------------------------------------------------------------------------
 void FuncExigida(int* pVet, int amount, int* pMin, int* pMax){ //FUNÇÃO APARENTEMENTE INUTIL EXIGIDA;
+
+    *pMin = FindMin(pVet, amount); //ENCONTRA O MENOR VALOR E DEFINE ELE COMO MENOR;
+    *pMax = FindMax(pVet, amount); //ENCONTRA O MAIOR VALOR E DEFINE ELE COMO MAIOR;
+
     cout << "\t |      First position array address: " << setw(10) << pVet << "               |" << endl;
     cout << "\t "; HBar(61);
     cout << "\t |   Amount of elements in the array: " << setw(10) << amount << "               |" << endl;
@@ -156,8 +160,8 @@ void CollectingData(){
         cout << " number: "; cin >> vet[i];
         cont++;
     }
-    int minValue = FindMin(vet, positions); //ENCONTRA O MENOR VALOR;
-    int maxValue = FindMax(vet, positions); //ENCONTRA O MAIOR VALOR;
+    int minValue;
+    int maxValue;
     int* pVet = vet; //DEFINE UM PONTEIRO APONTANDO PARA O VETOR;
     FuncExigida(pVet, positions, &minValue, &maxValue); //IMPRIME ALGUMAS COISAS;
 }
